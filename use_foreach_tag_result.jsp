@@ -37,9 +37,8 @@
 			<col style="width: auto;" />
 		</colgroup>
 		<tbody>
-			<c:set var="index" value="${0}"></c:set>
 			<c:forEach items="${list}" var="result" varStatus="status">
-				<c:if test="${index % 2 == 0}">
+				<c:if test="${status.index % 2 == 0}">
 					<tr>
 						<td>${result.no}</td>
 						<td>${result.name}</td>
@@ -47,7 +46,6 @@
 						<td>${list[status.index + 1].name}</td>
 					</tr>
 				</c:if>
-				<c:set var="index" value="${index+1}"></c:set>
 			</c:forEach>
 		</tbody>
 	</table>
